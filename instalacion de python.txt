@@ -1,0 +1,7 @@
+# descargamos la ultima version en el sitio oficial 
+$pythonUrl = "https://www.python.org/ftp/python/3.10.0/python-3.10.0-amd64.exe"
+$pythonInstaller = "$($env:TEMP)\python.exe"
+Invoke-WebRequest -Uri $pythonUrl -OutFile $pythonInstaller
+
+# Instalamos Python con las configuraciones por defecto.
+Start-Process -FilePath $pythonInstaller -ArgumentList "/quiet" -Wait
